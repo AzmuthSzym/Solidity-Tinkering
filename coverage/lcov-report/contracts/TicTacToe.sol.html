@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for contracts\TicTacToe.sol</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">contracts/</a> TicTacToe.sol
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">10.71% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>3/28</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">5.56% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>1/18</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">16.67% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/6</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">12% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>3/25</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">////SPDX-License-Identifier: Unlicensed
+pragma solidity ^0.8.0;
+&nbsp;
+/// @title A contract implementing TicTacToe game
+/// @author Azmuth
+/// @notice Player can start a game and make one move before the action of the second player is required
+/// @notice This behaviour was expected but it can easily be changed so that only when two players joined the game they can make their moves
+/// @notice I am also debating whether I should add a variable called "winner" so that it will be more accessible
+contract TicTacToe {
+    uint8[9] public board = [0,0,0,0,0,0,0,0,0];
+    address public player1;
+    address public player2;
+    bool public gameStarted = false;
+    uint public gamePlayedCount = 0;
+    uint public move = 1;
+&nbsp;
+<span class="fstat-no" title="function not covered" >    modifier gameActive {</span>
+<span class="cstat-no" title="statement not covered" >        require(gameStarted == true, "Game hasn't started")</span>;
+        _;
+    }
+&nbsp;
+    function startGame() public {
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(gameStarted == false, "Game has already started, use joinGame()");
+        player1 = msg.sender;
+        gameStarted = true;
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function joinGame() public gameActive {</span>
+<span class="cstat-no" title="statement not covered" >        player2 = msg.sender</span>;
+    }
+&nbsp;
+    /// @notice Execute move given by the player
+    /// @dev Winner is the player that has moved before
+    /// @dev move=1 -&gt; player2 has won, move=2 -&gt; player1 has won
+    /// @param boardPlace A position (number) passed by the player
+    /// @return true if a move has been made, false is the move was invalid and couldnt be executed
+<span class="fstat-no" title="function not covered" >    function makeMove(uint boardPlace) public gameActive returns(bool) {</span>
+<span class="cstat-no" title="statement not covered" >        if(checkWinner() == true) </span>
+        {
+<span class="cstat-no" title="statement not covered" >            gameStarted = false</span>;
+            gamePlayedCount++;
+        }
+<span class="cstat-no" title="statement not covered" >        if (validateMove(boardPlace) == false) <span class="cstat-no" title="statement not covered" >return false; </span></span>
+<span class="cstat-no" title="statement not covered" >        if(move == 1 &amp;&amp; msg.sender == player1)</span>
+        {
+<span class="cstat-no" title="statement not covered" >            board[boardPlace] = 1</span>;
+<span class="cstat-no" title="statement not covered" >            move = 2</span>;
+<span class="cstat-no" title="statement not covered" >            return true;</span>
+        }
+        else <span class="cstat-no" title="statement not covered" >if(move == 2 &amp;&amp; msg.sender == player2)</span>
+        {
+<span class="cstat-no" title="statement not covered" >            board[boardPlace] = 2</span>;
+<span class="cstat-no" title="statement not covered" >            move = 1</span>;
+<span class="cstat-no" title="statement not covered" >            return true;</span>
+        }
+        else {
+<span class="cstat-no" title="statement not covered" >            return false;</span>
+        }
+    }
+&nbsp;
+    /// @notice validate if the position given by the player is withing the boundaries
+    /// @param place A position (number) passed by the player
+    /// @return true if the position is correct and false if it isn't
+<span class="fstat-no" title="function not covered" >    function validateMove(uint place) internal view returns(bool) {</span>
+<span class="cstat-no" title="statement not covered" >        if(place &lt; 0 || place &gt; 8) <span class="cstat-no" title="statement not covered" >return false;</span></span>
+<span class="cstat-no" title="statement not covered" >        if(board[place] != 0) <span class="cstat-no" title="statement not covered" >return false;</span></span>
+<span class="cstat-no" title="statement not covered" >        return true;</span>
+    }
+&nbsp;
+    // 0 1 2
+    // 3 4 5
+    // 6 7 8
+    uint[][] winninPos = [[0,1,2], [3,4,5], [6,7,8], [0,3,6], [1,4,7], [2,5,8], [0,4,8], [2,4,6]];
+&nbsp;
+    /// @notice Check if a player has won the game by looking for possible winning combinations
+    /// @return true if a player has won, false if the winner was not found
+<span class="fstat-no" title="function not covered" >    function checkWinner() public view returns(bool)</span>
+    {
+<span class="cstat-no" title="statement not covered" >        for(uint i = 0; i &lt; 8; i++)</span>
+        {
+<span class="cstat-no" title="statement not covered" >            uint[] memory temp = winninPos[i];</span>
+<span class="cstat-no" title="statement not covered" >            if(board[temp[0]] != 0 &amp;&amp; board[temp[0]] == board[temp[1]] &amp;&amp; board[temp[0]] == board[temp[2]]) <span class="cstat-no" title="statement not covered" >return true;</span></span>
+        }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        return false;</span>
+    }
+}</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue Apr 19 2022 02:11:42 GMT+0200 (Central European Summer Time)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

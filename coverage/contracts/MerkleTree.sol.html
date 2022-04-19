@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Code coverage report for contracts\MyToken.sol</title>
+    <title>Code coverage report for contracts\MerkleTree.sol</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../prettify.css" />
     <link rel="stylesheet" href="../base.css" />
@@ -16,13 +16,13 @@
 <div class='wrapper'>
   <div class='pad1'>
     <h1>
-      <a href="../index.html">all files</a> / <a href="index.html">contracts/</a> MyToken.sol
+      <a href="../index.html">all files</a> / <a href="index.html">contracts/</a> MerkleTree.sol
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>1/1</span>
+        <span class='fraction'>2/2</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -37,7 +37,7 @@
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>1/1</span>
+        <span class='fraction'>2/2</span>
       </div>
     </div>
   </div>
@@ -55,7 +55,11 @@
 10
 11
 12
-13</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+13
+14
+15
+16
+17</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -64,22 +68,30 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">//SPDX-License-Identifier: Unlicense
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">////SPDX-License-Identifier: Unlicensed
 pragma solidity ^0.8.0;
 &nbsp;
-import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
+/// @title A contract to see how MerkleTree works
+/// @author Azmuth
+/// @notice Just a few simple exercises using openzeppelin library
 &nbsp;
-contract UselessToken is ERC20 {
-    uint256 constant _initial_supply = 1000 * (10**18);
+import "@openzeppelin/contracts/utils/cryptography/MerkleProof.sol";
 &nbsp;
-    constructor() ERC20("UselessToken", "UST") {
-        _mint(msg.sender, _initial_supply);
+contract MerkleTest {
+    bytes32 public merkleRoot = 0x0821bd02648ece087f32e3654e1a0289eeb7406d3652b477063dc91056f8fc8f;
+&nbsp;
+    function treeCheck(bytes32[] calldata _merkeProof, string memory input) public view returns(bool){
+        bytes32 leaf = keccak256(abi.encodePacked(input));
+        return MerkleProof.verify(_merkeProof, merkleRoot, leaf);
     }
-}
-&nbsp;</pre></td></tr>
+}</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->
 </div><!-- /wrapper -->
