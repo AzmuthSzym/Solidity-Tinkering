@@ -15,9 +15,14 @@ describe("TicTacToe Game Contract", function () {
     describe("Game initiation", function () {
         it("Should start the game", async function () {
             const startGame = await hardhatGameContract.startGame();
-            console.log(hardhatGameContract.gameStarted.call());
             expect(await hardhatGameContract.gameStarted.call()).to.equal(true);
-            //expect(await hardhatGameContract.gameStarted).to.equal(true);
+        });
+
+        it("Should make second player join", async function () {
+            const startGame = await hardhatGameContract.startGame();
+            const joinGame = await hardhatGameContract.joinGame();
+            expect(await hardhatGameContract.player2.call()).to.not.equal(0x0000000000000000000000000000000000000000);
+            //console.log(hardhatGameContract.player2.call());
         });
     });
 });
