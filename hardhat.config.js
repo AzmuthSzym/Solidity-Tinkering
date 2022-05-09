@@ -13,7 +13,7 @@ require('solidity-coverage')
   networks: {
     ropsten: {
       url: process.env.MY_URL_KEY,
-      accounts: [process.env.ACCOUNT_KEY],
+      accounts: [process.env.PRIVATE_KEY],
     },
   },
   etherscan: {
