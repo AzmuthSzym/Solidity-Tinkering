@@ -23,7 +23,6 @@ contract TokenInteraction {
         require(amount > 0, "You can't send 0 tokens");
         require(stakingToken.balanceOf(msg.sender) > amount,"You dont have enough tokens");
         require(stakingToken.approve(address(this), amount) == true, "Couldnt approve");
-        stakingToken.approve(msg.sender, amount);
         balances[msg.sender] += amount;
         stakingToken.transferFrom(msg.sender, address(this), amount);
     }
