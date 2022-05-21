@@ -11,7 +11,7 @@ contract TokenInteraction {
 
     mapping(address => uint256) public balances;
     IERC20 public stakingToken;
-    address UST_token = 0x6E69aFDDB019dD23C8057dF36A2b76180EE5BC5D; // UST (useless token) CONTRACT ADDRESS
+    address UST_token = 0xd4BE8544C9126EAc9EffF2eA497CAFa023d6e03F; // UST (useless token) CONTRACT ADDRESS
 
     /* ============= CONSTRUCTOR ============= */
 
@@ -23,6 +23,7 @@ contract TokenInteraction {
         require(amount > 0, "You can't send 0 tokens");
         require(stakingToken.balanceOf(msg.sender) > amount,"You dont have enough tokens");
         require(stakingToken.approve(address(this), amount) == true, "Couldnt approve");
+        stakingToken.approve(msg.sender, amount);
         balances[msg.sender] += amount;
         stakingToken.transferFrom(msg.sender, address(this), amount);
     }
@@ -30,7 +31,7 @@ contract TokenInteraction {
     function see_allowance(address _owner, address _spender) public view returns(uint256){
         return stakingToken.allowance(_owner, _spender);
     }
-    
+
     function withdraw(uint256 amount) public {
         require(balances[msg.sender] >= amount, "You can't withdraw more than you staked");
         balances[msg.sender] -= amount;

@@ -8,7 +8,7 @@ async function main() {
     console.log("Account balance:", (await ethers.utils.formatEther(weiAmount)));
   
     // make sure to replace the "Contract Name" reference with your own ERC-20 name!
-    const Contract = await ethers.getContractFactory("TokenInteraction");
+    const Contract = await ethers.getContractFactory("MyToken");
     const contract = await Contract.deploy();
   
     console.log("Contract address:", contract.address);
